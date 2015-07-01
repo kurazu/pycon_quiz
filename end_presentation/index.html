@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PyRiddle @ PyCon PL 2013</title>
+
+		<meta name="description" content="PyRiddle initial talk">
+		<meta name="author" content="Tomasz Maćkowiak">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>RyRiddle - Results</h1>
+					<h3>The <strong>best</strong> contest at PyCon PL 2013</h3>
+					<p>
+						<small>Created by <a href="http://hakim.se">Tomasz Maćkowiak</a> / <a href="mailto:kurazu@kurazu.net">kurazu@kurazu.net</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Stats</h2>
+					<h3>46 Participants</h3>
+					<h4>Histogram</h4>
+					<small>
+					<ol>
+						<li>Turing <strong>46</strong></li>
+						<li>Tomorrow <strong>46</strong></li>
+ 						<li>Week <strong>46</strong></li>
+ 						<li>Days17 <strong>46</strong></li>
+ 						<li>Days2048 <strong>44</strong></li>
+ 						<li>Sequence <strong>44</strong></li>
+ 						<li>Sequence2 <strong>44</strong></li>
+ 						<li>Sequence3 <strong>43</strong></li>
+ 						<li>Cezar <strong>43</strong></li>
+ 						<li>Imperatores <strong>42</strong></li>
+ 						<li>Bruteforce <strong>37</strong></li>
+ 						<li>Possibilities <strong>26</strong></li>
+ 						<li>BigPossibilities <strong>24</strong></li>
+ 						<li>BiggerPossibilities <strong>23</strong></li>
+ 						<li>BiggestPossibilities <strong>8</strong></li>
+					 	<li>Final <strong>5</strong></li>
+					</ol>
+					</small>
+				</section>
+
+				<section>
+					<h2>Riddle 1 - Turing</h2>
+					<h4>Answer: no</h3>
+				</section>
+
+				<section>
+					<h2>Riddle 2,3,4,5</h2>
+					<div data-load="02_tomorrow.py.html"></div>
+				</section>
+
+				<section>
+					<h2>6,7,8 Sequence</h2>
+					<div data-load="06_seq.py.html"></div>
+				</section>
+
+				<section>
+					<h2>6,7 Sequence - answer</h2>
+					<h4>Answers: 527, 56782015046063</h4>
+				</section>
+
+				<section>
+					<h2>8 Sequence 3</h2>
+					<div data-load="08_short.py.html"></div>
+					<h3>Answer: 486</h3>
+				</section>
+
+				<section>
+					<h2>9 Cezar</h2>
+					<div data-load="09_cezar.py.html"></div>
+					<h3>Answer: PIECEOFCAKE</h3>
+				</section>
+
+				<section>
+					<h2>10 Imperatores</h2>
+					<div data-load="10_cezar.py.html"></div>
+				</section>
+
+				<section>
+					<h2>10 Imperatores</h2>
+					<div data-load="10_fib.py.html"></div>
+				</section>
+
+				<section>
+					<h2>10 Imperatores</h2>
+					<div data-load="10_sol.py.html"></div>
+				</section>
+
+				<section>
+					<h2>10 Imperatores</h2>
+					<h3>Answer: BIOSYSTEMATISTS</h3>
+				</section>
+
+				<section>
+					<h2>11 Bruteforce</h2>
+					<div data-load="11_hash.py.html"></div>
+				</section>
+
+				<section>
+					<h2>11 Bruteforce</h2>
+					<div data-load="11_match.py.html"></div>
+				</section>
+
+				<section>
+					<h2>12,13 Possibilities</h2>
+					<div data-load="12_poss.py.html"></div>
+					<h3>Answers: 133320, 201599999798400</h3>
+				</section>
+
+				<section>
+					<h2>14 Possibilities</h2>
+					<p>123</p>
+					<p>132</p>
+					<p>213</p>
+					<p>231</p>
+					<p>312</p>
+					<p>321</p>
+				</section>
+
+				<section>
+					<h2>14 Possibilities</h2>
+					<div data-load="14_poss3.py.html"></div>
+				</section>
+
+				<section>
+					<h2>14 Possibilities</h2>
+					<h3>Answer: a261d93ffffffff5d9e26c000</h3>
+				</section>
+
+				<section>
+					<h2>15 Possibilities</h2>
+					<div data-load="15_conv.py.html"></div>
+				</section>
+
+				<section>
+					<h2>15 Possibilities</h2>
+					<h3>Answer: <small>7wmf7oufq8qy3da7zzzzzzzzzzzzzzzzs3dksb5k9r91wmps0000000</small></h3>
+				</section>
+
+				<section>
+					<h3>Almost there</h3>
+					<small>
+					<ul>
+						<li>Censored</li>
+					</ul>
+					</small>
+				</section>
+
+				<section>
+					<h3>Almost there</h3>
+					<small>
+					<ul>
+						<li>censored</li>
+					</ul>
+					</small>
+				</section>
+
+				<section>
+					<h3>Almost there</h3>
+					<small>
+					<ul>
+						<li>censored</li>
+					</ul>
+					</small>
+				</section>
+
+				<section>
+					<h1>7-th Prize</h1>
+					<h2>Book: To mock a mockingbird</h2>
+					<h2>Sponsor: STX Next</h2>
+				</section>
+
+				<section>
+					<h3>7-th Prize</h3>
+					<h2>censored</h2>
+					<h4>BiggestPossibilities - 17:03:31</h4>
+				</section>
+
+				<section>
+					<h1>6-th Prize</h1>
+					<h2>Book: Algorithmic puzzles</h2>
+					<h2>Sponsor: STX Next</h2>
+				</section>
+
+				<section>
+					<h3>6-th Prize</h3>
+					<h2>censored</h2>
+					<h4>BiggestPossibilities - 16:55:52</h4>
+				</section>
+
+				<section>
+					<h1>5-th Prize</h1>
+					<h2>Book: Puzzles for Programmers and Pros</h2>
+					<h2>Sponsor: STX Next</h2>
+				</section>
+
+				<section>
+					<h3>5-th Prize</h3>
+					<h2>censored</h2>
+					<h4>Final - 17:58:33</h4>
+				</section>
+
+				<section>
+					<h1>4-th Prize</h1>
+					<h2>Book: Programming challenges</h2>
+					<h2>Sponsor: STX Next</h2>
+				</section>
+
+				<section>
+					<h3>4-th Prize</h3>
+					<h2>censored</h2>
+					<h4>Final - 17:43:40</h4>
+				</section>
+
+				<section>
+					<h1>3-rd Prize</h1>
+					<h2>Book: The new Turing omnibus</h2>
+					<h2>Sponsor: STX Next</h2>
+				</section>
+
+				<section>
+					<h3>3-rd Prize</h3>
+					<h2>censored</h2>
+					<h4>Final - 17:30:42</h4>
+				</section>
+
+				<section>
+					<h1>2-nd Prize</h1>
+					<h2>Amazon Kindle Paperwhite</h2>
+					<h2>Sponsor: STX Next</h2>
+				</section>
+
+				<section>
+					<h3>2-nd Prize</h3>
+					<h2>censored</h2>
+					<h4>Final - 17:02:05</h4>
+				</section>
+
+				<section>
+					<h1>1-st Prize</h1>
+					<h2>Nexus 7 Tablet</h2>
+					<h2>Sponsor: getbase.com</h2>
+				</section>
+
+				<section>
+					<h3>1-st Prize</h3>
+					<h2>censored</h2>
+					<h4>Final - 16:13:13</h4>
+				</section>
+
+				<section>
+					<h1>Thank you Participants!</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
