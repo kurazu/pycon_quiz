@@ -1,0 +1,12 @@
+{% extends "riddle.html" %}
+
+{% block title %}Sequence once more{% endblock %}
+{% block subtitle %}Because math never gets boring!{% endblock %}
+{% block riddle %}
+<div class="alert alert-success">
+	<span class="glyphicon glyphicon-check"></span>
+	Great! We know now that you are as good in mathematics as an ordinary school-kid.
+</div>
+<p class="lead">How about the <strong>25</strong>-th element of the sequence?</p>
+<blockquote><img src="{{ url_for('static', filename='img/sequence.gif') }}" class="img-responsive" alt="{{ 's(1) = 8; s(2) = 9; s(i) = s(i-1) * 3 + s(i-2) * 2' }}" title="{{ 's(1) = 8; s(2) = 9; s(i) = s(i-1) * 3 + s(i-2) * 2' }}"></blockquote>
+{% endblock %}

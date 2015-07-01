@@ -1,0 +1,19 @@
+{% extends "riddle.html" %}
+
+{% block title %}The end{% endblock %}
+{% block subtitle %}Go home now{% endblock %}
+
+{% block riddle %}
+<p class="lead">
+	You finished
+	<strong>all</strong>
+	the riddles, well done!
+</p>
+<p>Here is a lovely kitten as a prize for your effort</p>
+<p>
+	<img src="{{ url_for('static', filename='img/kitten.jpg') }}" class="img-responsive" alt="Kitten" title="Kitten">
+</p>
+{% endblock %}
+
+{% block answer %}
+{% endblock %}

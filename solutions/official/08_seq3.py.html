@@ -1,0 +1,20 @@
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">cached</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+	<span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">arg</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+			<span class="n">cache</span><span class="p">[</span><span class="n">arg</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">arg</span><span class="p">]</span>
+	<span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@cached</span>
+<span class="k">def</span> <span class="nf">s</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">return</span> <span class="mi">8</span>
+	<span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="mi">9</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">s</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">s</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">s</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="k">print</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span> <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+</pre></div>

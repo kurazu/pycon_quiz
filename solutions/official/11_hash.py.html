@@ -1,0 +1,8 @@
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="n">ENCODED</span> <span class="o">=</span> <span class="s">&#39;sha1$bh9ul$8e808fcea5418aa971311ea1598df65627ea3b98&#39;</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">SALT</span><span class="p">,</span> <span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">ENCODED</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;$&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">possibility</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="n">SALT</span> <span class="o">+</span> <span class="n">possibility</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span> <span class="o">==</span> <span class="n">PASSWORD</span>
+</pre></div>

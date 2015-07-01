@@ -1,0 +1,13 @@
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">cached</span>
+
+<span class="nd">@cached</span>
+<span class="k">def</span> <span class="nf">s</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">8</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">9</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">s</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="k">print</span> <span class="n">s</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>

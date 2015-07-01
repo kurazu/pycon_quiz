@@ -1,0 +1,10 @@
+{% extends "riddle.html" %}
+
+{% block title %}Encoding{% endblock %}
+{% block subtitle %}or decoding{% endblock %}
+{% block riddle %}
+<p>
+	<img src="{{ url_for('static', filename='img/julius.jpg') }}" class="img-responsive" alt="Gaius Iulius Caesar">
+</p>
+<p class="lead">Please decipher <code>CVRPRBSPNXR</code>.</p>
+{% endblock %}

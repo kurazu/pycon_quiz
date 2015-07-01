@@ -1,0 +1,11 @@
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">digits</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span>
+    <span class="n">one</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s">&#39;1&#39;</span> <span class="o">*</span> <span class="n">l</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
+    <span class="n">digits</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">digits</span><span class="p">)</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">C</span> <span class="o">*</span> <span class="n">one</span>
+
+<span class="k">print</span> <span class="s">&#39;</span><span class="si">%x</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">count</span><span class="p">(</span><span class="s">&#39;123456789abcdef&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+</pre></div>

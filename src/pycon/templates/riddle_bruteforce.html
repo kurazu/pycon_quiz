@@ -1,0 +1,55 @@
+{% extends "riddle.html" %}
+
+{% block title %}Forcing your way in{% endblock %}
+{% block subtitle %}Hacking 101{% endblock %}
+{% block riddle %}
+<p>
+	By mysterious circumstances you gained access to a
+	<a href="{{ url_for('static', filename='data/passwords.sqlite') }}">database</a>
+	(<a href="{{ url_for('static', filename='data/passwords.sql') }}">SQL dump</a>)
+	of passwords of your friend's website.
+</p>
+<p>Can you recover the admin password?</p>
+<div class="hidden alert alert-dismissable alert-info" id="first_hint">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<span class="glyphicon glyphicon-comment"></span>
+	You know that your friend is lazy and would not use a password of more than 15 characters.
+</div>
+<div class="hidden alert alert-dismissable alert-info" id="second_hint">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<span class="glyphicon glyphicon-comment"></span>
+	You also know, that your friend doesn't like to use anything but letters in his password.
+</div>
+<div class="hidden alert alert-dismissable alert-info" id="third_hint">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<span class="glyphicon glyphicon-comment"></span>
+	And your friend likes his passwords lowercase so he can type them more easily.
+</div>
+<div class="hidden alert alert-dismissable alert-warning" id="fourth_hint">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<span class="glyphicon glyphicon-comment"></span>
+	One more thing: your friend is a fanatic scrabble player. He might have picked a password from a Scrabble
+	<a class="alert-link" href="{{ url_for('static', filename='data/CSW12.txt.bz2') }}">dictionary</a>.
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function($) {
+	var SECOND = 1000,
+		MINUTE = 60 * SECOND;
+
+	function showElemProducer(elem_id) {
+		return function() {
+			var elem = document.getElementById(elem_id);
+			$(elem).removeClass('hidden');
+		};
+	}
+
+	['first_hint', 'second_hint', 'third_hint', 'fourth_hint'].forEach(function(elem_id, idx) {
+		setTimeout(showElemProducer(elem_id), MINUTE * (1 + idx * 2));
+	});
+
+})(jQuery);
+</script>
+{% endblock %}

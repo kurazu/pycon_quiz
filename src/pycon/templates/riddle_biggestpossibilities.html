@@ -1,0 +1,17 @@
+{% extends "riddle.html" %}
+
+{% block title %}The biggest possibilites{% endblock %}
+{% block subtitle %}Do you have a datacenter handy?{% endblock %}
+
+{% block riddle %}
+<div class="alert alert-success">
+	<span class="glyphicon glyphicon-check"></span>
+	If you got this far, this one should be a <em>piece of cake</em>.
+</div>
+
+<p>Consider numbers in <em>base 36</em>. The digits of that base are: <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code>, <code>9</code>, <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code>, <code>f</code>, <code>g</code>, <code>h</code>, <code>i</code>, <code>j</code>, <code>k</code>, <code>l</code>, <code>m</code>, <code>n</code>, <code>o</code>, <code>p</code>, <code>q</code>, <code>r</code>, <code>s</code>, <code>t</code>, <code>u</code>, <code>v</code>, <code>w</code>, <code>x</code>, <code>y</code>, <code>z</code>.</p>
+<p>For example:
+	<pre>123456789abcdefghijklmnopqrstuvwxyz<sub>36</sub> = 86846823611197163108337531226495015298096208677436155<sub>10</sub></pre>
+</p>
+<p class="lead">What is the sum of all <em>32-digit</em> <em>base 36</em> numbers that can be constructed from the following digits (repetitions of digits are not allowed): <code>1</code>, <code>2</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code>, <code>9</code>, <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code>, <code>f</code>, <code>g</code>, <code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>, <code>m</code>, <code>n</code>, <code>o</code>, <code>p</code>, <code>r</code>, <code>s</code>, <code>t</code>, <code>u</code>, <code>v</code>, <code>w</code>, <code>x</code>, <code>y</code>, <code>z</code>?</p>
+{% endblock %}

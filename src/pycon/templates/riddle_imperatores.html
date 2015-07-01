@@ -1,0 +1,118 @@
+{% extends "riddle.html" %}
+
+{% block title %}Imperatores{% endblock %}
+{% block subtitle %}Is Fortuna your <em>imperatrix</em>?{% endblock %}
+{% block riddle %}
+<p>
+	The following list contains words encoded using Caezar's cipher.
+</p>
+<p>
+	Each word is encoded with shift equal to the value of Fibonacci sequence for given index.
+</p>
+<p>
+	<ol>
+		<li><code>TVCWPDBMJTBUJPO</code></li>
+		<li><code>UWNRJWTKBCVKQPU</code></li>
+		<li><code>FRQWUDFWDELOLWB</code></li>
+		<li><code>INAJWYNXXJRJSYX</code></li>
+		<li><code>ACJKIBMOWZQHQVO</code></li>
+		<li><code>PBASRFFVBANEVRF</code></li>
+		<li><code>XDIZHDXMJBMVKCT</code></li>
+		<li><code>NCOIKQWCAVMAAMA</code></li>
+		<li><code>FRQWUDFWDELOLWB</code></li>
+		<li><code>PYLYETZXZCASTPD</code></li>
+		<li><code>VMRFCGHOHWQOZZM</code></li>
+		<li><code>RTAUNBZKHRZSHNM</code></li>
+		<li><code>VADHVFVGBEVNYYL</code></li>
+		<li><code>YUEBDABADFUAZQP</code></li>
+		<li><code>OSDQHCNOGHKHRSR</code></li>
+		<li><code>DNLYOLWTKLETZYD</code></li>
+		<li><code>YBKMEVYECXOCCOC</code></li>
+		<li><code>XDIZHDXMJBMVKCT</code></li>
+		<li><code>UFSTUMYMFQRNYNX</code></li>
+		<li><code>SUCCESSLESSNESS</code></li>
+		<li><code>TWYMTUFJINHFQQD</code></li>
+		<li><code>JSFSYNTRTWUMNJX</code></li>
+		<li><code>KQQBKXNSCOWOXDC</code></li>
+		<li><code>TJSXDBTIGXRPAAN</code></li>
+		<li><code>RTBBDRRKDRRMDRR</code></li>
+		<li><code>IZHFOGHFIQHIFOZ</code></li>
+		<li><code>ERZBARGVMNGVBAF</code></li>
+		<li><code>ESFBNMFTTOFTTFT</code></li>
+		<li><code>ASUOJSFHSPFOHSG</code></li>
+		<li><code>DKTGJIXAXOPIXDC</code></li>
+		<li><code>IRUHQVLFDOLWLHV</code></li>
+		<li><code>VAKAFUDAFSLAGFK</code></li>
+		<li><code>YDNZHWVMFVODJIN</code></li>
+		<li><code>IVOEBSYBGNGVBAF</code></li>
+		<li><code>KPIUJMZTIQVAPQX</code></li>
+		<li><code>YDNDIXGDIVODJIN</code></li>
+		<li><code>RYHUXWLOLCDWLRQ</code></li>
+		<li><code>GLOSGQGRMPGYJJW</code></li>
+		<li><code>DPVOUFSCBMBODFT</code></li>
+		<li><code>RTABZSDFNQHYHMF</code></li>
+		<li><code>CONDESCENDINGLY</code></li>
+		<li><code>BGZLADQKZHMRGHO</code></li>
+		<li><code>DTCHNLDSQHBZKKX</code></li>
+		<li><code>SJRPYQRPSARSPYJ</code></li>
+		<li><code>OBQROKXYFIFQFBP</code></li>
+		<li><code>WDJNTNOZHVODNON</code></li>
+		<li><code>TJSUZQVSULQDAKE</code></li>
+		<li><code>FPNAQNYVMNGVBAF</code></li>
+		<li><code>MDIWTXYFYNHFQQD</code></li>
+		<li><code>VAKUGFLAFMALAWK</code></li>
+		<li><code>KLOQEBOIFKBPPBP</code></li>
+		<li><code>TMRAPJHIGPIXDCH</code></li>
+		<li><code>NDAZOTAEOABUOMX</code></li>
+		<li><code>BHHSBOEJTFNFOUT</code></li>
+		<li><code>PBAGENCBFVGVBAF</code></li>
+		<li><code>QCBHFODCGWHWCBG</code></li>
+		<li><code>CJUVNJOJABUJPOT</code></li>
+		<li><code>RDCUTHHXDCPGXTH</code></li>
+		<li><code>IJUHUEJOFYSQBBO</code></li>
+		<li><code>MJRFLLQZYNSFYJX</code></li>
+		<li><code>YMZVHGZNNIZNNZN</code></li>
+		<li><code>AXIOMATIZATIONS</code></li>
+		<li><code>JMOCJKVZYDXVGGT</code></li>
+		<li><code>YDNVAADMHVODJIN</code></li>
+		<li><code>JXUHYECEHFXYICI</code></li>
+		<li><code>LITZXLETKLETZYD</code></li>
+		<li><code>VOJOGPSNBUJWFMZ</code></li>
+		<li><code>ZADFTQDXUZQEEQE</code></li>
+		<li><code>ERGHEANOVYVGVRF</code></li>
+		<li><code>UHAQNEKNSZSHNMR</code></li>
+		<li><code>PUHQDFUEEQYQZFE</code></li>
+		<li><code>CPZCNSPDECLETZY</code></li>
+		<li><code>LOXZRILRPKBPPBP</code></li>
+		<li><code>NCOIKQWCAVMAAMA</code></li>
+		<li><code>YMJWNTRTWUMNXRX</code></li>
+		<li><code>OEBAPUBFPBCVPNY</code></li>
+		<li><code>MFAFXGJESLANWDQ</code></li>
+		<li><code>HTSIJXHJSINSLQD</code></li>
+		<li><code>PQBOBLQVMFZXIIV</code></li>
+		<li><code>HQTGPUKECNKVKGU</code></li>
+		<li><code>OSDQHCNOGHKHRSR</code></li>
+		<li><code>CSBDIZEBDUZMJTN</code></li>
+		<li><code>PANOPHTHALMITIS</code></li>
+		<li><code>QIPUPJPOJABUJPO</code></li>
+		<li><code>TVMQIVSJABUJPOT</code></li>
+		<li><code>RCPVKUQETCVKECN</code></li>
+		<li><code>SDQWLVRFUDWLFDO</code></li>
+		<li><code>INXJRGFWPFYNTSX</code></li>
+		<li><code>LQAKWVBQVCQBQMA</code></li>
+		<li><code>RKPYNHFGENGVBAF</code></li>
+		<li><code>MZJMXCZNOMVODJI</code></li>
+		<li><code>PMUIOOTCBQVIBMA</code></li>
+		<li><code>UHPRQHWLCDWLRQV</code></li>
+		<li><code>XPECZAZWTELYLEP</code></li>
+		<li><code>ASHFCDCZWHOBOHS</code></li>
+		<li><code>CHRZEEHQLZSHNMR</code></li>
+		<li><code>CUBGBVBAVMNGVBA</code></li>
+		<li><code>NUFGYUZULMFUAZE</code></li>
+		<li><code>LHROQNONQSHNMDC</code></li>
+		<li><code>NZFYEPCMLWLYNPD</code></li>
+		<li><code>WOQKFOBDOLBKDOC</code></li>
+	</ol>
+</p>
+<p class="lead">Which word appears only once in the list?</p>
+{% endblock %}

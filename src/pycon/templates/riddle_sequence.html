@@ -1,0 +1,14 @@
+{% extends "riddle.html" %}
+
+{% block title %}Sequence{% endblock %}
+{% block subtitle %}Mathematics is fun!{% endblock %}
+{% block riddle %}
+<div class="alert alert-success">
+	<span class="glyphicon glyphicon-check"></span>
+	Congratulations, you have just passed the <em>are-you-not-a-robot</em> test.
+</div>
+<p>Let's play with simple mathematics.</p>
+<p>There is a sequence defined:</p>
+<blockquote><img src="{{ url_for('static', filename='img/sequence.gif') }}" class="img-responsive" alt="{{ 's(1) = 8; s(2) = 9; s(i) = s(i-1) * 3 + s(i-2) * 2' }}" title="{{ 's(1) = 8; s(2) = 9; s(i) = s(i-1) * 3 + s(i-2) * 2' }}"></blockquote>
+<p class="lead">What is the value of the <strong>5</strong>-th element of the sequence?</p>
+{% endblock %}

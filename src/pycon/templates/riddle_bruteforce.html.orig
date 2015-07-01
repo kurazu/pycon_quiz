@@ -1,0 +1,48 @@
+{% extends "riddle.html" %}
+
+{% block title %}Forcing your way in{% endblock %}
+{% block riddle %}
+<p>
+	By mysterious circumstances you gained access to a
+	<a href="{{ url_for('static', filename='data/passwords.sql')}}">database</a>
+	<a href="{{ url_for('static', filename='data/passwords.sqlite')}}">database</a>
+	of passwords of your friend's website.
+</p>
+<p>Can you recover the admin password?</p>
+<p class="hidden" id="first_hint">
+	You know that your friend is lazy and would not use a password of more than 8 characters.
+</p>
+<p class="hidden" id="second_hint">
+	You also know, that your friend doesn't like to use anything but letters in his password.
+</p>
+<p class="hidden" id="third_hint">
+	And your friend likes his passwords lowercase so he can type them more easily.
+</p>
+<p class="hidden" id="fourth_hint">
+	One more thing: your friend is a fanatic scrabble player. He might have picked a password from a Scrabble
+	<a href="{{ url_for('static', filename='data/CSW12.txt.gz') }}">dictionary</a>.
+</p>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+	var SECOND = 1000,
+		MINUTE = 60 * SECOND;
+	MINUTE = SECOND * 10;
+
+	function showElemProducer(elem_id) {
+		return function() {
+			var elem = document.getElementById(elem_id);
+			elem.className = "";
+		};
+
+	}
+
+	['first_hint', 'second_hint', 'third_hint', 'fourth_hint'].forEach(function(elem_id, idx) {
+		setTimeout(showElemProducer(elem_id), MINUTE * (1 + idx * 2));
+	});
+
+})();
+</script>
+{% endblock %}

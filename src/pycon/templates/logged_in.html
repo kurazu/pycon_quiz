@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block nav %}
+<li class="active">
+	<a href="{{ url_for('main') }}">
+		<i class="glyphicon glyphicon-map-marker"></i>
+    Riddle {{ current_riddle }} / {{ total_riddles }}
+		<span class="badge">Try {{ tries }}/{{ max_tries }}</span>
+	</a>
+</li>
+
+{% block current_nav %}
+{% endblock %}
+
+<li>
+	<a href="{{ url_for('main', logout='true') }}">
+		<span class="glyphicon glyphicon-off"></span>
+		Logout
+		<span class="badge">
+			<span class="glyphicon glyphicon-user"></span>
+			{{ email }}
+		</span>
+	</a>
+</li>
+{% endblock %}

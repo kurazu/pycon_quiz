@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block nav %}
+<li class="active">
+	<a href="{{ url_for('main') }}">
+		<span class="glyphicon glyphicon-log-in"></span>
+		Sign in
+	</a>
+</li>
+{% endblock %}
+
+{% block title %}Please sign in{% endblock %}
+{% block subtitle %}Valid email required{% endblock %}
+
+{% block body %}
+<div class="alert alert-dismissable alert-info">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <span class="glyphicon glyphicon-phone"></span>
+  <strong>Do you know?</strong>
+  This website works well on your smartphone. First 9 riddles can be solved with networkless laptop and a smartphone.
+</div>
+
+<div class="alert alert-dismissable alert-info">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <span class="glyphicon glyphicon-forward"></span>
+  <strong>Do you know?</strong>
+  You can continue your progress after signing in with the same email and token from a different device.
+</div>
+
+<form action="{{ url_for('main') }}" method="post">
+  {% if error %}
+  <div class="alert alert-dismissable alert-danger">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<span class="glyphicon glyphicon-exclamation-sign"></span> {{ error }}
+  </div>
+  {% endif %}
+  <div class="form-group{% if email_err %} has-error{% endif %}">
+  	<label class="sr-only" for="email">Email address</label>
+  	<input id="email" type="text" name="email" class="form-control input-lg" placeholder="Email address" value="{{ email }}" autofocus>
+  </div>
+  <div class="form-group{% if token_err %} has-error{% endif %}">
+  	<label class="sr-only" for="token">Token</label>
+  	<input id="token" type="password" name="token" class="form-control input-lg" placeholder="Token">
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">
+  	<span class="glyphicon glyphicon-log-in"></span>
+  	Sign in
+  </button>
+</form>
+
+{% endblock %}

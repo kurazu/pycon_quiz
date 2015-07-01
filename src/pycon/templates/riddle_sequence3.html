@@ -1,0 +1,14 @@
+{% extends "riddle.html" %}
+
+{% block title %}Sequence again{% endblock %}
+{% block subtitle %}With a twist{% endblock %}
+
+{% block riddle %}
+<div class="alert alert-success">
+	<span class="glyphicon glyphicon-check"></span>
+	Exquisite! Your robotic friend is doing a fine job.
+</div>
+<p class="lead">But can you tell the value of the <strong>200</strong>-th element?</p>
+<blockquote><img src="{{ url_for('static', filename='img/sequence.gif') }}" class="img-responsive" alt="{{ 's(1) = 8; s(2) = 9; s(i) = s(i-1) * 3 + s(i-2) * 2' }}" title="{{ 's(1) = 8; s(2) = 9; s(i) = s(i-1) * 3 + s(i-2) * 2' }}"></blockquote>
+<p>We don't want you to input so many characters, so please provide just the <strong>sum off all decimal digits</strong>.</p>
+{% endblock %}

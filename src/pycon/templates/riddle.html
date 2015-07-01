@@ -1,0 +1,28 @@
+{% extends "logged_in.html" %}
+
+{% block body %}
+    {% block riddle %}Riddle content{% endblock %}
+
+    {% block answer %}
+    <form action="{{ url_for('main') }}" method="POST" class="form-signin">
+      {% if msg %}
+      <div class="alert alert-dismissable alert-danger">
+  			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  			<span class="glyphicon glyphicon-exclamation-sign"></span> {{ msg }}
+  		</div>
+      {% endif %}
+  		<div class="input-group{% if msg %} has-error{% endif %}">
+  		  <span class="input-group-addon">&gt;&gt;&gt;</span>
+            <input class="form-control" type="text" name="answer" value="{{ answer }}" maxlength="{{ max_answer_length }}" placeholder="Answer" autofocus>
+            <span class="input-group-btn">
+          	<button class="btn btn-primary" type="submit">
+          		<span class="glyphicon glyphicon-ok"></span>
+          		Try!
+          	</button>
+            </span>
+  		</div>
+
+    </form>
+    {% endblock %}
+
+{% endblock %}

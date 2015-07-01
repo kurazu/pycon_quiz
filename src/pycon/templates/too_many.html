@@ -1,0 +1,21 @@
+{% extends "logged_in.html" %}
+
+{% block current_nav %}
+<li class="active">
+	<a href="{{ url_for('main') }}">
+		<span class="glyphicon glyphicon-minus-sign"></span>
+		Too many answers
+	</a>
+</li>
+{% endblock %}
+
+{% block title %}Too many answers{% endblock %}
+{% block subtitle %}You tried too many times{% endblock %}
+
+{% block body %}
+<div class="alert alert-danger">
+  <span class="glyphicon glyphicon-minus-sign"></span>
+  <strong>Answer limit exceeded.</strong>
+  You cannot use the application anymore.
+</div>
+{% endblock %}

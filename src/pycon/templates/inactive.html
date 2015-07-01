@@ -1,0 +1,21 @@
+{% extends "logged_in.html" %}
+
+{% block current_nav %}
+<li class="active">
+	<a href="{{ url_for('main') }}">
+		<span class="glyphicon glyphicon-minus-sign"></span>
+		Inactive
+	</a>
+</li>
+{% endblock %}
+
+{% block title %}The competition is not active now{% endblock %}
+{% block subtitle %}Try again later{% endblock %}
+
+{% block body %}
+<div class="alert alert-danger">
+  <span class="glyphicon glyphicon-minus-sign"></span>
+  <strong>Competition is inactive.</strong>
+  It has either not started yet or has already ended.
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="n">ENCODED</span> <span class="o">=</span> <span class="s">&#39;sha1$bh9ul$8e808fcea5418aa971311ea1598df65627ea3b98&#39;</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">SALT</span><span class="p">,</span> <span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">ENCODED</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;$&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">possibility</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="n">SALT</span> <span class="o">+</span> <span class="n">possibility</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span> <span class="o">==</span> <span class="n">PASSWORD</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;solutions/official/CSW12.txt&#39;</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+	<span class="n">row</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">row</span><span class="p">:</span>
+		<span class="k">continue</span>
+	<span class="k">if</span> <span class="s">&#39; &#39;</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+		<span class="n">word</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">word</span> <span class="o">=</span> <span class="n">row</span>
+	<span class="k">if</span> <span class="n">check</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">u&#39;DECODED {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
+		<span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">u&#39;Solution not found&#39;</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
